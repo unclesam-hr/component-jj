@@ -8,14 +8,23 @@ db.once('open', function() {
 });
 
 var productSchema = new mongoose.Schema({
+  id: Number,
   productName: String,
   type: String,
   imageDefault: String,
-  images: [{name: String, urls: [String]}],
-  colors: [{name: String, url: String}],
-  price: Number
+  images: [],
+  colors: [{name: String, url: String, image: String}],
+  price: Number,
+  gallery: []
+});
+
+var gallerySchema = new mongoose.Schema({
+  id: Number,
+  productName: String,
+  gallery: []
 });
 
 var Product = mongoose.model('product', productSchema);
+var Gallery = mongoose.model('gallery', gallerySchema);
 
-module.exports = Product;
+module.exports = { Product, Gallery };
