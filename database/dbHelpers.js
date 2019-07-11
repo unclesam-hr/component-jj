@@ -1,7 +1,7 @@
-const Products = require('./index.js');
+const Product = require('./index.js');
 
 const get = () => {
-  return Products.find({});
+  return Product.find({});
 }
 
 module.exports = { get };

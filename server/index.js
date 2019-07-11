@@ -1,21 +1,17 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/carousel',  { useNewUrlParser: true });
+const express = require('express');
+const parser = require('body-parser');
+const path = require('path');
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Connected to database')
-});
+const { get } = require('./controllers.js');
 
-var productSchema = new mongoose.Schema({
-  productName: String,
-  type: String,
-  imageDefault: String,
-  images: [{name: String, urls: [String]}],
-  colors: [{name: String, url: String}],
-  price: Number
-});
+const app = express();
+const port = 3000;
 
-var Product = mongoose.model('product', productSchema);
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: true }));
 
-module.exports = Product;
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.get('/api/product', get);
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))

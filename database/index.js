@@ -18,13 +18,6 @@ var productSchema = new mongoose.Schema({
   gallery: []
 });
 
-var gallerySchema = new mongoose.Schema({
-  id: Number,
-  productName: String,
-  gallery: []
-});
-
 var Product = mongoose.model('product', productSchema);
-var Gallery = mongoose.model('gallery', gallerySchema);
 
-module.exports = { Product, Gallery };
+module.exports = Product;
