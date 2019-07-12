@@ -23,23 +23,4 @@ const seed = () => {
     .catch(err => console.error(err));
 }
 
-const galleryData = [
-  {
-    id: 0,
-    productName: 'Auburn Chair',
-    gallery: ['https://i.imgur.com/7bhsMY3.jpg', 'https://i.imgur.com/iGbIKJD.jpg', 'https://i.imgur.com/USgnFaC.jpg', 'https://i.imgur.com/Srsyleh.jpg', 'https://i.imgur.com/UDrfhjJ.jpg', 'https://i.imgur.com/9E3WqkA.jpg']
-  }
-];
-
-const seedGallery = () => {
-    Gallery.create(galleryData)
-    .then(() => {
-        console.log('Database seeded!');
-        mongoose.connection.close();
-    })
-    .catch( err => console.error(err));
-}
-
-
 seed();
-seedGallery();
