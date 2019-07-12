@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Product, Gallery } = require('../database/index.js');
+const Product = require('../database/index.js');
 
 const data = [
   {
