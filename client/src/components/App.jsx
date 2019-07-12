@@ -5,6 +5,7 @@ import { FaRegHeart, FaHeart } from 'react-icons/fa';
 
 import BreadCrumbs from './BreadCrumbs';
 import ImageZoom from './ImageZoom';
+import Carousel from './Carousel';
 
 export default class App extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class App extends Component {
 
     this.fetchProduct = this.fetchProduct.bind(this);
     this.toggleFavorite = this.toggleFavorite.bind(this);
+    this.updateMainImg = this.updateMainImg.bind(this);
 
   }
 
@@ -61,6 +63,10 @@ export default class App extends Component {
     )
   }
 
+  updateMainImg(selectedImage) {
+    this.setState({ mainImage: selectedImage })
+  }
+
   render() {
     return (
       <div>
@@ -76,7 +82,13 @@ export default class App extends Component {
                 <span className="zoom-text"> Roll Over Image To Zoom</span>
               </div>
             </div>
+            
+            <div className="carousel">
+              <Carousel updateMainImg={this.updateMainImg} images={this.state.images}/>
+            </div>
           </div>
+
+
         </div>
       </div>
      )

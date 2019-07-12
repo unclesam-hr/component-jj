@@ -182,3 +182,25 @@ ul {
   cursor: pointer;
   z-index: 1;
 }
+
+/*IMAGE CAROUSEL*/
+.carousel {
+  width: 523px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.carousel-image {
+  width: 84px;
+  height: 84px;
+  padding: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.carousel-image-selected {
+  border: 1px solid black;
+  width: 84px;
+  height: 84px;
+  padding: 5px;
+}
