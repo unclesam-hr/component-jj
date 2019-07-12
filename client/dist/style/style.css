@@ -204,3 +204,30 @@ ul {
   height: 84px;
   padding: 5px;
 }
+
+/*EMAIL AND PRINT*/
+.save-product {
+  display: flex;
+  width: 98%;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.save-product:hover {
+  cursor: pointer;
+  color: #866347;
+}
+
+.save-product-text:hover {
+  border-bottom: 1px solid #866347;
+}
+
+.print {
+  vertical-align:middle;
+}
+
+.space {
+  margin-right: 20px;
+}

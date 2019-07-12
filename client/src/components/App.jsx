@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
+import { FiMail, FiPrinter } from 'react-icons/fi';
 
 import BreadCrumbs from './BreadCrumbs';
 import ImageZoom from './ImageZoom';
@@ -86,8 +87,15 @@ export default class App extends Component {
             <div className="carousel">
               <Carousel updateMainImg={this.updateMainImg} images={this.state.images}/>
             </div>
-          </div>
 
+            <div className="save-product">
+              <FiMail size={20} />&#160;
+              <span className="save-product-text space">Email</span>
+              <FiPrinter size={20}/>&#160;
+              <span className="save-product-text">Print</span>
+            </div>
+
+          </div>
 
         </div>
       </div>
