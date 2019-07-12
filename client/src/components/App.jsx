@@ -7,6 +7,7 @@ import { FiMail, FiPrinter } from 'react-icons/fi';
 import BreadCrumbs from './BreadCrumbs';
 import ImageZoom from './ImageZoom';
 import Carousel from './Carousel';
+import Gallery from './Gallery';
 
 export default class App extends Component {
   constructor(props) {
@@ -74,6 +75,7 @@ export default class App extends Component {
         <BreadCrumbs product={this.state.product}/>
 
         <div id="main">
+
           <div className="left">
             <div className="product-image">
               {this.state.favorite ? this.favorite() : this.unfavorite()}
@@ -95,6 +97,11 @@ export default class App extends Component {
               <span className="save-product-text">Print</span>
             </div>
 
+            <div className="gallery">
+              <img className="at-logo" src="https://imgur.com/KXvJ9Co.jpg" />
+              <a className="add-photos" onClick={this.handleFileUpload} href="">+ ADD YOUR OWN PHOTOS</a>
+              <Gallery gallery={this.state.gallery}/>
+            </div>
           </div>
 
         </div>

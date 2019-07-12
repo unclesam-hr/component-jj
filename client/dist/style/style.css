@@ -231,3 +231,30 @@ ul {
 .space {
   margin-right: 20px;
 }
+
+/* GALLERY */
+.gallery {
+  padding-top: 10px;
+  width: 523px;
+  position: relative;
+}
+
+.gallery-image {
+  width: 165px;
+  height: 165px;
+}
+
+.at-logo {
+  width: 130px;
+  height: 35px;
+}
+
+.add-photos {
+  font-size: 12px;
+  height: 17px;
+  display: inline-block;
+  margin-top: 10px;
+  position: absolute;
+  right: 0px;
+  border-bottom: 1px solid;
+}
