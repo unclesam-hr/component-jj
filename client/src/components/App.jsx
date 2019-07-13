@@ -112,9 +112,48 @@ export default class App extends Component {
                 <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>
               </div>
             </div>
-            
           </div>
 
+          <div className="right">
+            <div className="productDetails">
+              <h1 className="product-name">{this.state.product.productName}</h1>
+              <p className="color-select">HAVE A QUESTION?</p>
+              <p className="grade right-subsets">Contract Grade</p>
+              <div className="color">
+                {this.state.makeSelection ? <div className="color-select-popup">Please make selections before adding to cart.</div> : null}
+                <p className="color-select">PLEASE SELECT A COLOR:</p>
+                <span className="selected-color">{this.state.selectedColor}</span>
+                
+                <div className="color-image">
+                  {this.state.colors.map((color, key) => (
+                    <img onClick={this.handleSelectedColor} className="colorImg" src={color.url} id={key} key={key}/>
+                  ))}
+                </div>
+
+              </div>
+
+              <div>
+                <span className="price">${this.state.product.price}</span>
+              </div>
+              <div className="qty right-subsets">
+                <label><abbr className="color-select">QTY</abbr></label>
+                <div><input className="qty-input" type="number" placeholder="QTY"/></div>
+              </div>
+              
+              {this.state.showShippingOptions ? this.shippingOptions() : null}
+
+              <div>
+                <a className="swatches right-subsets" href="">Request Free Swatches</a>
+              </div>
+
+              <div className="addToCart right-subsets">
+                <div><button className="cart-btn" onClick={this.handleAddToCart}>Add To Cart</button></div>
+                <div><button id="registry" className="cart-btn">Add To Registry</button></div>
+                <img className="credit-img" src="https://i.imgur.com/gAgBJTU.jpg" />
+              </div>
+          
+            </div>
+          </div>
         </div>
       </div>
      )
