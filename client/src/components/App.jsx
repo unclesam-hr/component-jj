@@ -102,6 +102,17 @@ export default class App extends Component {
               <a className="add-photos" onClick={this.handleFileUpload} href="">+ ADD YOUR OWN PHOTOS</a>
               <Gallery gallery={this.state.gallery}/>
             </div>
+
+            <div className="social-media">
+              <div className="fb-like fb" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+              <div className="twitter">
+                <a className="twitter-share-button" href="https://twitter.com/intent/tweet" data-url="https://dev.twitter.com/web/tweet-button">Tweet</a>
+              </div>
+              <div className="pinterest">
+                <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>
+              </div>
+            </div>
+            
           </div>
 
         </div>

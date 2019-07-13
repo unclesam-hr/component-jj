@@ -258,3 +258,12 @@ ul {
   right: 0px;
   border-bottom: 1px solid;
 }
+
+/* SOCIAL MEDIA BUTTONS */
+.social-media {
+  display: flex
+}
+
+.twitter, .pinterest  {
+ margin-left: 10px;
+}
