@@ -26,7 +26,10 @@ export default class App extends Component {
     this.fetchProduct = this.fetchProduct.bind(this);
     this.toggleFavorite = this.toggleFavorite.bind(this);
     this.updateMainImg = this.updateMainImg.bind(this);
-
+    this.handleSelectedColor = this.handleSelectedColor.bind(this);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.shippingOptions = this.shippingOptions.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
   }
 
   componentDidMount() {
@@ -67,6 +70,60 @@ export default class App extends Component {
 
   updateMainImg(selectedImage) {
     this.setState({ mainImage: selectedImage })
+  }
+
+  handleSelectedColor(e) {
+    let imgs = document.getElementsByClassName('carousel-image-selected');
+    let colors = document.getElementsByClassName('colorImg-selected');
+    let selectedColor = e.target;
+
+    this.setState({
+      selectedColor: this.state.colors[e.target.id].name, 
+      showShippingOptions: true,
+      makeSelection: false
+    });
+    this.updateMainImg(this.state.colors[e.target.id].image);
+    // remove borders from carousel and add border to selected color
+    if (imgs.length) {
+      imgs[0].className = "carousel-image"
+    }
+
+    if (colors.length) {
+      colors[0].className = "colorImg";
+      selectedColor.className = "colorImg-selected";
+    } else {
+      selectedColor.className = "colorImg-selected";
+    }
+  }
+
+  shippingOptions() {
+    return (
+      <div id="receive-method">
+        <h3>Shipping Options</h3>
+        <div className="receive-method-option">
+          <input className="radio" type="radio" name="drone" checked />
+          <label>Ship This Item</label>
+        </div>
+
+        <div className="receive-method-option">
+          <input type="radio" name="drone" />
+          <label>Free Pick Up In Store</label>
+        </div>
+      </div>
+    )
+  }
+
+  handleAddToCart(e) {
+    if(!this.state.selectedColor) {
+      this.setState({ makeSelection: true })
+    } else {
+      this.setState({ makeSelection: false })
+      //open cart modal
+    }    
+  }
+
+  handleFileUpload() {
+    //fileupload
   }
 
   render() {
@@ -135,7 +192,7 @@ export default class App extends Component {
               <div>
                 <span className="price">${this.state.product.price}</span>
               </div>
-              <div className="qty right-subsets">
+              <div className="right-subsets">
                 <label><abbr className="color-select">QTY</abbr></label>
                 <div><input className="qty-input" type="number" placeholder="QTY"/></div>
               </div>
@@ -146,7 +203,7 @@ export default class App extends Component {
                 <a className="swatches right-subsets" href="">Request Free Swatches</a>
               </div>
 
-              <div className="addToCart right-subsets">
+              <div className="right-subsets">
                 <div><button className="cart-btn" onClick={this.handleAddToCart}>Add To Cart</button></div>
                 <div><button id="registry" className="cart-btn">Add To Registry</button></div>
                 <img className="credit-img" src="https://i.imgur.com/gAgBJTU.jpg" />
