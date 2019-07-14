@@ -30,6 +30,8 @@ export default class App extends Component {
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.shippingOptions = this.shippingOptions.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.showCartModal = this.showCartModal.bind(this);
+    this.closeCartModal = this.closeCartModal.bind(this);
   }
 
   componentDidMount() {
@@ -106,7 +108,7 @@ export default class App extends Component {
         </div>
 
         <div className="receive-method-option">
-          <input type="radio" name="drone" />
+          <input className="radio" type="radio" name="drone" />
           <label>Free Pick Up In Store</label>
         </div>
       </div>
@@ -118,8 +120,18 @@ export default class App extends Component {
       this.setState({ makeSelection: true })
     } else {
       this.setState({ makeSelection: false })
-      //open cart modal
+      this.showCartModal();
     }    
+  }
+
+  showCartModal() {
+    let modal = document.getElementById("cart-modal");
+    modal.style.display = "block";
+  }
+
+  closeCartModal() {
+    let modal = document.getElementById("cart-modal");
+    modal.style.display = "none";
   }
 
   handleFileUpload() {
@@ -127,11 +139,54 @@ export default class App extends Component {
   }
 
   render() {
+    const reviewStyle = {
+      fontSize: "11px",
+      paddingBottom: "15px"
+    };
+    
     return (
       <div>
         <BreadCrumbs product={this.state.product}/>
 
         <div id="main">
+          <div id="cart-modal" className="modal">
+            <div className="cart-modal-content">
+          
+                <span className="close" onClick={this.closeCartModal}>&times;</span>
+                <h3>ADDED TO SHOPPING CART</h3>
+
+                <div className="cart-info">
+                  <div id="cart-product-info">
+                    <div>
+                      <img className="cart-product-image" src={this.state.mainImage} />
+                    </div>
+
+                    <div className="cart-product-details">
+                      <h4>{this.state.product.productName + ', ' + this.state.selectedColor}</h4>
+                      <div id="sku">Item: 706774</div>
+                      <div id="quantity">Quantity: 1</div>
+                      <div id="price">Price: ${this.state.product.price}</div>
+                    </div>
+                  </div>
+                  <div id="cart-details">
+                    <div className="current-cart">Currently in Cart: 1 item</div>
+                    <div>Total: ${this.state.product.price}</div>
+                    <div>(Subtotal does not include shipping and processing, gift wrap, discounts or tax)</div>
+                    <div className="addToCart right-subsets">
+                      <div><button className="continue-btn" onClick={this.closeCartModal}>Continue Shopping</button></div>
+                      <div><button className="cart-modal-btn" onClick={this.handleAddToCart}>Checkout</button></div>
+                      <div><button className="cart-modal-btn" onClick={this.handleAddToCart}>Express Checkout</button></div>
+                    </div>
+                    <div className="review" style={reviewStyle}>You’ll still have a chance to review your order.</div>
+                  </div>
+                </div>
+      
+              <div className="cart-bottom">
+                <h2>WE THOUGHT YOU'D ALSO LOVE...</h2>
+                <img src="https://imgur.com/0LT6gvi.jpg"/>
+              </div>
+            </div>
+          </div>
 
           <div className="left">
             <div className="product-image">
