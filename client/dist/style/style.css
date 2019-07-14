@@ -8,6 +8,10 @@
   transition: opacity ease-in 0.2s;
 }
 
+ul {
+  list-style: none;
+}
+
 li {
   text-align: -webkit-match-parent;
 }
@@ -20,8 +24,25 @@ a {
   cursor: pointer;
 }
 
-ul {
-  list-style: none;
+button {
+  min-width: 160px;
+  width: 100%;
+  height: 40px;
+  text-transform: capitalize;
+  display: inline-block;
+  position: relative;
+  font-size: 100%;
+  cursor: pointer;
+}
+
+#main {
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.left {
+  margin-right: 30px;
 }
 
 /* BREADCRUMB */
@@ -56,6 +77,7 @@ ul {
   height: 523px;
   width: 523px;
   display: block;
+  position: relative
 }
 
  .fluid {
@@ -64,7 +86,12 @@ ul {
   display: block;
 }
 
-/* IMAGE MODAL (background) */
+.enlargedImage {
+  z-index: 1;
+  right: 0;
+} 
+
+/* IMAGE MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -76,20 +103,6 @@ ul {
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
-}
-
-/* Image Modal Content */
-.modal {
-  display: none;
-  position: fixed; 
-  z-index: 2;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-content {
@@ -124,21 +137,6 @@ ul {
   cursor: pointer;
 }
 
-#main {
-  display: flex;
-  width: 75%;
-  margin: 0 auto;
-}
-
-  /*positioning view larger and roll over to zoom*/
-.product-image {
-  position: relative
-}
-
-.enlargedImage {
-  z-index: 1;
-  right: 0;
-}
 
 .image-tools {
   position: absolute;
@@ -267,3 +265,159 @@ ul {
 .twitter, .pinterest  {
  margin-left: 10px;
 }
+
+/* RIGHT COLUMN - PRODUCT DETAILS */
+.right-subsets {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.product-name {
+  margin: 0 0 15px;
+  font-family: "GT-Eesti 3r", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 22.425px;
+  line-height: 38px;
+  letter-spacing: 0.8px;
+  color: #050708;
+  text-transform: capitalize;
+  margin: 0 0 15px;
+}
+
+.color-select {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  font-family: "GT-Eesti 5r",Arial,sans-serif;
+  font-weight: 600;
+  font-size: 11.062px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #363636;
+  font-style: unset;
+  line-height: unset;
+}
+
+.color-select-popup {
+  font-family: "GT-Eesti 2r",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.643em;
+  letter-spacing: 0.5px;
+  color: #363636;
+  margin-bottom: 15px;
+  color: #b30008;
+  padding: 10px 15px;
+  background: rgba(179,0,8,0.1);
+  border: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+.grade {
+  font-style: italic;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #1259a4;
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+.selected-color {
+  font-family: "GT-Eesti 2r",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.643em;
+  letter-spacing: 0.5px;
+  color: #363636;
+  margin-bottom: 15px;
+  display: block;
+  margin-bottom: 0;
+}
+
+.color-image {
+  justify-content: space-around;
+}
+
+.colorImg {
+  border: 1px solid white;
+  padding: 2px;
+  margin: 10px 10px 10px 0px;
+  height: 27px;
+  width: 47px;
+}
+
+.colorImg-selected {
+  border: 1px solid black;
+  padding: 2px;
+  margin: 10px 10px 10px 0px;
+  height: 27px;
+  width: 47px;
+}
+
+.colorImg:hover{
+  border: 1px solid black;
+}
+
+.price {
+  font-size: 100%;
+  color: #050708;
+  font-weight: 600;
+}
+
+.qty-input {
+  font-family: "GT-Eesti 2r",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.643em;
+  letter-spacing: 0.5px;
+  color: #363636;
+  margin-bottom: 15px;
+  width: 15%;
+  height: 40px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  text-align: center;
+  border: 1px solid #050708;
+  border-radius: 5px;
+  width: 50px;
+}
+
+.swatches {
+  font-size: 100%;
+  border-bottom: 1px solid;
+}
+
+.cart-btn {
+  margin-top: 15px;
+  font-family: "GT-Eesti 5r",Arial,sans-serif;
+  color: #fff;
+  border: 1px solid #af1a31;
+  background: #af1a31;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#registry{
+  background: #fff;
+  color: #33526c;
+  border: none;
+  font-style: italic;
+  text-decoration: underline;
+  font-family: "Sanomat 4r", Georgia, serif;
+}
+
+.credit-img {
+  height: 132px;
+  width: 390px;
+}
+
+
+
+
+
+
+
+
+
+
