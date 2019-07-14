@@ -412,12 +412,30 @@ button {
   width: 390px;
 }
 
+/*shipping options*/
+h3 {
+  margin: 0 0 10px;
+}
 
+#receive-method {
+  padding: 18px 0 0 0;
+  border-top: 1px solid #d8d8d8;
+  /* border-bottom: 1px solid #d8d8d8;
+  background: #f8f8f8; */
+  font-size: 100%;
+  margin: 30px 0px;
+}
 
+.receive-method-option {
+  margin: 5px;
+  font-family: "GT-Eesti 2r", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
 
-
-
-
-
-
-
+.radio {
+  margin-right: 10px;
+}
