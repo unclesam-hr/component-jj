@@ -1,7 +1,8 @@
 const dbHelpers = require('../database/dbHelpers.js');
 
 const get = (req, res) => {
-  dbHelpers.get()
+  const id = req.params.id
+  dbHelpers.get(id)
     .then((data) => {
       res.status(200).send(data)
     })

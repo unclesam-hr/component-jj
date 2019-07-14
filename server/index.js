@@ -12,6 +12,6 @@ app.use(parser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/api/product', get);
+app.get('/api/product/:id', get);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

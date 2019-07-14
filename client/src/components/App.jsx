@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { FiMail, FiPrinter } from 'react-icons/fi';
 
 import BreadCrumbs from './BreadCrumbs';
@@ -18,13 +17,10 @@ export default class App extends Component {
       images: [],
       gallery: [],
       selectedColor: '',
-      favorite: false,
       colors: [],
       showShippingOptions: false
     }
-
     this.fetchProduct = this.fetchProduct.bind(this);
-    this.toggleFavorite = this.toggleFavorite.bind(this);
     this.updateMainImg = this.updateMainImg.bind(this);
     this.handleSelectedColor = this.handleSelectedColor.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
@@ -39,9 +35,10 @@ export default class App extends Component {
   }
 
   fetchProduct() {
-    // let id = Math.floor(Math.Random() * (100) + 1);
+    // let id = Math.floor(Math.Random() * (19) + 1);
+    let id = 0;
     axios
-    .get('/api/product')
+    .get(`/api/product/${id}`)
     .then(({data}) => {
       this.setState({ 
         product : data[0],
@@ -49,25 +46,11 @@ export default class App extends Component {
         images: data[0].images,
         gallery: data[0].gallery,
         colors: data[0].colors
+      }, () => {
+        console.log(data)
       });
     })
     .catch(err => console.error(err));
-  }
-
-  toggleFavorite(e) {
-    this.setState({ favorite: !this.state.favorite });
-  }
-
-  favorite() {
-    return (
-      <span onClick={this.toggleFavorite} className="favorite"><FaHeart size={25} style={{color: 'red'}}/></span>
-    )
-  }
-
-  unfavorite() {
-    return (
-      <span onClick={this.toggleFavorite} className="favorite"><FaRegHeart size={25} style={{color: 'red'}}/></span>
-    )
   }
 
   updateMainImg(selectedImage) {
@@ -189,14 +172,16 @@ export default class App extends Component {
           </div>
 
           <div className="left">
-            <div className="product-image">
+          <ImageZoom productName={this.state.product.productName} smallImage={this.state.mainImage} largeImage={this.state.mainImage} className="zoom"/>
+
+            {/*<div className="product-image">
               {this.state.favorite ? this.favorite() : this.unfavorite()}
               <ImageZoom productName={this.state.product.productName} smallImage={this.state.mainImage} largeImage={this.state.mainImage} className="zoom"/>
               <div className="image-tools">
                 <a className="larger-text">View Larger</a>
                 <span className="zoom-text"> Roll Over Image To Zoom</span>
               </div>
-            </div>
+            </div>*/}
             
             <div className="carousel">
               <Carousel updateMainImg={this.updateMainImg} images={this.state.images}/>
@@ -229,8 +214,8 @@ export default class App extends Component {
           <div className="right">
             <div className="productDetails">
               <h1 className="product-name">{this.state.product.productName}</h1>
-              <p className="color-select">HAVE A QUESTION?</p>
-              <p className="grade right-subsets">Contract Grade</p>
+              {/*<p className="color-select">HAVE A QUESTION?</p>
+              <p className="grade right-subsets">Contract Grade</p> */}
               <div className="color">
                 {this.state.makeSelection ? <div className="color-select-popup">Please make selections before adding to cart.</div> : null}
                 <p className="color-select">PLEASE SELECT A COLOR:</p>
