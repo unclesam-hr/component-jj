@@ -107,7 +107,7 @@ button {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 2% auto;
   padding: 20px;
   border: 1px solid #d9d9d9;
   width: 80%;
@@ -121,6 +121,7 @@ button {
   letter-spacing: 0.8px;
   font-size: 18px;
   line-height: 18px;
+  text-decoration: Capitalize;
 }
 
 .close {
@@ -174,7 +175,7 @@ button {
 /* CART MODAL */
 .cart-modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 2% auto;
   padding: 20px;
   width: 640px;
   line-height: 1.4;
@@ -236,8 +237,9 @@ button {
   letter-spacing: 1px;
 }
 
+.cart-btn:hover, 
 .cart-modal-btn:hover {
-  background: #af1a31;
+  background: #871425;
 }
 
 .continue-btn {
@@ -403,14 +405,14 @@ h4, h2 {
   font-weight: 600;
 }
 
-.grade {
+/* .grade {
   font-style: italic;
   font-size: 10px;
   letter-spacing: 0.5px;
   color: #1259a4;
   white-space: nowrap;
   font-weight: 300;
-}
+} */
 
 .selected-color {
   font-family: "GT-Eesti 2r",Arial,sans-serif;
@@ -496,12 +498,17 @@ h4, h2 {
   font-family: "Sanomat 4r", Georgia, serif;
 }
 
+#registry:hover {
+  color: #fff;
+  background: #33526c;
+}
+
 .credit-img {
   height: 132px;
   width: 390px;
 }
 
-/*shipping options*/
+/*SHIPPING OPTIONS*/
 h3 {
   margin: 0 0 10px;
 }
@@ -526,4 +533,3 @@ h3 {
 .radio {
   margin-right: 10px;
 }
-
