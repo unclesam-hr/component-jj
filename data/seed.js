@@ -33,7 +33,7 @@ const data =
     "images": ["http://carousel-we.s3-us-west-1.amazonaws.com/02/00.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/04.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/05.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/06.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/07.jpg"],
     "colors": [{"name":"Performance Velvet, Ink Blue", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/02/blue.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/02/blue-image.jpg"},{"name":"Distressed Velvet, Mineral Gray ", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/02/gray.jpg", "image": "http://carousel-we.s3-us-west-1.amazonaws.com/02/gray-image.jpg"},{"name":"Worn Velvet, Metal", "url": "http://carousel-we.s3-us-west-1.amazonaws.com/02/metal.jpg", "image": "http://carousel-we.s3-us-west-1.amazonaws.com/02/metal-image.jpg"},{"name":"Twill, Stone", "url": "http://carousel-we.s3-us-west-1.amazonaws.com/02/stone.jpg", "image": "http://carousel-we.s3-us-west-1.amazonaws.com/02/stone-image.jpg"}],
     "price":2898,
-    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery04.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery05.jpg"]
+    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery1.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery2.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery3.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery4.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/02/gallery05.jpg"]
   },
   {
     "id":3,
@@ -63,7 +63,7 @@ const data =
     "images": ["http://carousel-we.s3-us-west-1.amazonaws.com/05/00.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/04.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/05.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/06.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/07.jpg"],
     "colors": [{"name":"Antique Brass", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass-image.jpg"},{"name":"Brushed Nickel", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass-image.jpg"}],
     "price":299,
-    gallery: ["http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery04.jpg"]
+    gallery: ["http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery1.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery2.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery3.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery4.jpg"]
   },
   {
     "id":6,
@@ -73,7 +73,7 @@ const data =
     "images": ["http://carousel-we.s3-us-west-1.amazonaws.com/06/00.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/04.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/05.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/06.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/07.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/08.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/09.jpg"],
     "colors": [{"name":"Saddle Leather/Espresso", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/06/saddle.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/06/saddle-image.jpg"},{"name":"Nero Leather/Pecan", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/06/nero.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/06/nero-image.jpg"}],
     "price":999,
-    gallery: ["http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery04.jpg"]
+    gallery: ["http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery1.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery2.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery3.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/06/gallery4.jpg"]
   },
   {
     "id":7,
@@ -83,7 +83,7 @@ const data =
     "images": ["http://carousel-we.s3-us-west-1.amazonaws.com/07/00.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/04.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/05.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/06.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/07.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/08.jpg"],
     "colors": [{"name":"Aspen Leather, Aegean", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/07/aegean.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/07/aegean-image.jpg"},{"name":"Aspen Leather, Fog", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/07/fog.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/07/fog-image.jpg"},{"name":"Heritage Leather, Verdant", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/07/verdant.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/07/verdant-image.jpg"},{"name":"Leather, Saddle", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/07/saddle.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/07/saddle-image.jpg"}],
     "price":999,
-    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery04.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery05.jpg"]
+    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery1.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery2.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery3.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery4.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/07/gallery05.jpg"]
   },
   {
     "id":8,
@@ -93,7 +93,7 @@ const data =
     "images": ["http://carousel-we.s3-us-west-1.amazonaws.com/08/00.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/01.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/02.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/03.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/04.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/05.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/06.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/07.jpg"],
     "colors": [{"name":"Chunky Melange, Frost Gray", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/08/frostGray.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/08/frostGray-image.jpg"},{"name":"Chunky Melange, Charcoal", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/08/charcoal.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/08/charcoal-image.jpg"}],
     "price":640,
-    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery01.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery02.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery03.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery04.jpg"]
+    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery1.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery2.jpeg","http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery3.jpeg","http://carousel-we.s3-us-west-1.amazonaws.com/08/gallery4.jpeg"]
   },
   {
     "id":9,
@@ -103,7 +103,7 @@ const data =
     "images": ["http://carousel-we.s3-us-west-1.amazonaws.com/09/00.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/01.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/02.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/03.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/04.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/05.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/06.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/07.jpg"],
     "colors": [{"name":"Walnut", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/09/walnut.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/09/walnut-image.jpg"},{"name":"White Lacquer", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/09/whitelacquer.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/09/whitelacquer-image.jpg"}],
     "price":249,
-    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery01.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery02.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery03.jpg","http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery04.jpg"]
+    "gallery": ["http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery1.jpeg","http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery2.jpeg","http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery3.jpeg","http://carousel-we.s3-us-west-1.amazonaws.com/09/gallery4.jpeg"]
   },
   {
     "id":10,
