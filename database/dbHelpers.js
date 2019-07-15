@@ -1,7 +1,7 @@
 const Product = require('./index.js');
 
-const get = () => {
-  return Product.find({});
+const get = (id) => {
+  return Product.find({ id });
 }
 
 module.exports = { get };

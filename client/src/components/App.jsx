@@ -35,19 +35,17 @@ export default class App extends Component {
   }
 
   fetchProduct() {
-    // let id = Math.floor(Math.Random() * (19) + 1);
-    let id = 0;
+    const id = Math.floor(Math.random() * (19) + 1);
     axios
     .get(`/api/product/${id}`)
     .then(({data}) => {
+      console.log(data);
       this.setState({ 
         product : data[0],
         mainImage: data[0].imageDefault,
         images: data[0].images,
         gallery: data[0].gallery,
         colors: data[0].colors
-      }, () => {
-        console.log(data)
       });
     })
     .catch(err => console.error(err));
