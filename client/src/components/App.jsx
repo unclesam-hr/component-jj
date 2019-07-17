@@ -42,10 +42,9 @@ export default class App extends Component {
   }
 
   fetchProduct() {
-    // const id = Math.floor(Math.random() * (19) + 1);
-    const id = 0;
+    const id = Math.floor(Math.random() * (19) + 1);
     axios
-      .get(`/api/product/${id}`)
+      .get(`http://localhost:3003/api/product/${id}`)
       .then(({data}) => {
         this.setState({ 
           product : data[0],
