@@ -61,7 +61,7 @@ const data =
     "type": "Dining Room Tables",
     "imageDefault":"http://carousel-we.s3-us-west-1.amazonaws.com/05/00.jpg",
     "images": ["http://carousel-we.s3-us-west-1.amazonaws.com/05/00.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/01.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/02.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/03.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/04.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/05.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/06.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/07.jpg"],
-    "colors": [{"name":"Antique Brass", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass-image.jpg"},{"name":"Brushed Nickel", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass-image.jpg"}],
+    "colors": [{"name":"Antique Brass", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/05/AntiqueBrass-image.jpg"},{"name":"Brushed Nickel", "url":"http://carousel-we.s3-us-west-1.amazonaws.com/05/BrushedNickel.jpg", "image":"http://carousel-we.s3-us-west-1.amazonaws.com/05/BrushedNickel-image.jpg"}],
     "price":299,
     gallery: ["http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery1.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery2.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery3.jpg", "http://carousel-we.s3-us-west-1.amazonaws.com/05/gallery4.jpg"]
   },
