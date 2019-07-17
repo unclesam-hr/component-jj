@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import { FiMail, FiPrinter } from 'react-icons/fi';
+import { TiSocialFacebookCircular, TiSocialInstagram } from 'react-icons/ti';
 
 import BreadCrumbs from './BreadCrumbs';
 import ImageZoom from './ImageZoom';
@@ -18,16 +19,22 @@ export default class App extends Component {
       gallery: [],
       selectedColor: '',
       colors: [],
-      showShippingOptions: false
+      showShippingOptions: false,
+      upload: true,
+      instagram: false,
+      facebook: false
     }
+
     this.fetchProduct = this.fetchProduct.bind(this);
     this.updateMainImg = this.updateMainImg.bind(this);
     this.handleSelectedColor = this.handleSelectedColor.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.shippingOptions = this.shippingOptions.bind(this);
-    this.handleFileUpload = this.handleFileUpload.bind(this);
     this.showCartModal = this.showCartModal.bind(this);
     this.closeCartModal = this.closeCartModal.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.closeFileModal = this.closeFileModal.bind(this);
+    this.handleFileUploadClick = this.handleFileUploadClick.bind(this);
   }
 
   componentDidMount() {
@@ -35,19 +42,19 @@ export default class App extends Component {
   }
 
   fetchProduct() {
-    const id = Math.floor(Math.random() * (19) + 1);
+    // const id = Math.floor(Math.random() * (19) + 1);
+    const id = 0;
     axios
-    .get(`/api/product/${id}`)
-    .then(({data}) => {
-      console.log(data);
-      this.setState({ 
-        product : data[0],
-        mainImage: data[0].imageDefault,
-        images: data[0].images,
-        gallery: data[0].gallery,
-        colors: data[0].colors
-      });
-    })
+      .get(`/api/product/${id}`)
+      .then(({data}) => {
+        this.setState({ 
+          product : data[0],
+          mainImage: data[0].imageDefault,
+          images: data[0].images,
+          gallery: data[0].gallery,
+          colors: data[0].colors
+        });
+      })
     .catch(err => console.error(err));
   }
 
@@ -86,11 +93,16 @@ export default class App extends Component {
         <div className="receive-method-option">
           <input className="radio" type="radio" name="drone" checked />
           <label>Ship This Item</label>
-        </div>
+          <div className="receive-extra"><strong className="in-stock">In Stock + Ready to Ship:</strong> Order now for delivery Jul. 19 - Jul. 23 to zip code: 90001</div>
+          
+          </div>
 
         <div className="receive-method-option">
           <input className="radio" type="radio" name="drone" />
-          <label>Free Pick Up In Store</label>
+          <label>Free Pick Up In Store </label>
+          <div className="not-available receive-extra">Not Available Near Florence-Graham, CA, USA</div>
+          <div><a className="store-link receive-extra" href="">Choose a different store</a></div>
+         
         </div>
       </div>
     )
@@ -115,8 +127,51 @@ export default class App extends Component {
     modal.style.display = "none";
   }
 
-  handleFileUpload() {
-    //fileupload
+  handleFileUpload(e) {
+    e.preventDefault();
+    let modal = document.getElementById("file-modal");
+    modal.style.display = "block";
+  }
+
+  closeFileModal() {
+    let modal = document.getElementById("file-modal");
+    modal.style.display = "none";
+  }
+
+  handleFileUploadClick(e) {
+    const options = e.target.id;
+    if(options === 'instagram') {
+      this.setState({ upload: false, instagram: true, facebook: false });
+    } else if(options === 'facebook') {
+      this.setState({ upload: false, instagram: false, facebook: true });
+    } else {
+      this.setState({ upload: true, instagram: false, facebook: false });
+    }
+  }
+
+  showUpload () {
+    return (
+      <div>
+        <h2>DRAG & DROP</h2>
+        <span>your content or browse files</span>
+      </div>
+    )
+  }
+
+  showInstagram() {
+    return (
+      <div>
+        <button><TiSocialInstagram size={20}/> CONNECT TO INSTAGRAM</button>
+      </div>
+    )
+  }
+
+  showFacebook() {
+    return (
+      <div>
+        <button><TiSocialFacebookCircular size={20}/> CONNECT TO FACEBOOK</button>
+      </div>
+    )
   }
 
   render() {
@@ -128,7 +183,6 @@ export default class App extends Component {
     return (
       <div>
         <BreadCrumbs product={this.state.product}/>
-
         <div id="main">
           <div id="cart-modal" className="modal">
             <div className="cart-modal-content">
@@ -169,17 +223,40 @@ export default class App extends Component {
             </div>
           </div>
 
+
+          <div id="file-modal" className="modal">
+            <div className="modal-content">
+                <span className="close" onClick={this.closeFileModal}>&times;</span>
+                <div id="file-modal-content">
+                  <div className="file-tabs">
+                    <h3>Select Your Content</h3>
+                      <div className="tabs">
+                        <button onClick={this.handleFileUploadClick} id="upload">Upload</button>
+                        <button onClick={this.handleFileUploadClick} id="instagram">Instagram</button>
+                        <button onClick={this.handleFileUploadClick} id="facebook">Facebook</button>
+                      </div>
+                      <div className="upload-content">
+                        {this.state.upload ? this.showUpload() : null}
+                        {this.state.instagram ? this.showInstagram() : null}
+                        {this.state.facebook ? this.showFacebook() : null}
+                      </div>
+                  </div>
+                 
+                  <div id="file-edit">
+                    <div><h3>Edit Content</h3></div>
+                    <div className="file-edit-content">
+                      <div>No content selected.</div>
+                      <div>Add content to continue.</div>
+                    </div>
+                    <div className="filed-edit-btn"><button>Next</button></div>
+                  </div>
+                </div>
+ 
+            </div>
+          </div>
+
           <div className="left">
           <ImageZoom productName={this.state.product.productName} smallImage={this.state.mainImage} largeImage={this.state.mainImage} className="zoom"/>
-
-            {/*<div className="product-image">
-              {this.state.favorite ? this.favorite() : this.unfavorite()}
-              <ImageZoom productName={this.state.product.productName} smallImage={this.state.mainImage} largeImage={this.state.mainImage} className="zoom"/>
-              <div className="image-tools">
-                <a className="larger-text">View Larger</a>
-                <span className="zoom-text"> Roll Over Image To Zoom</span>
-              </div>
-            </div>*/}
             
             <div className="carousel">
               <Carousel updateMainImg={this.updateMainImg} images={this.state.images}/>
@@ -224,7 +301,6 @@ export default class App extends Component {
                     <img onClick={this.handleSelectedColor} className="colorImg" src={color.url} id={key} key={key}/>
                   ))}
                 </div>
-
               </div>
 
               <div>
@@ -234,9 +310,7 @@ export default class App extends Component {
                 <label><abbr className="color-select">QTY</abbr></label>
                 <div><input className="qty-input" type="number" placeholder="QTY"/></div>
               </div>
-              
               {this.state.showShippingOptions ? this.shippingOptions() : null}
-
               <div>
                 <a className="swatches right-subsets" href="">Request Free Swatches</a>
               </div>
@@ -244,9 +318,8 @@ export default class App extends Component {
               <div className="right-subsets">
                 <div><button className="cart-btn" onClick={this.handleAddToCart}>Add To Cart</button></div>
                 <div><button id="registry" className="cart-btn">Add To Registry</button></div>
-                <img className="credit-img" src="https://i.imgur.com/gAgBJTU.jpg" />
+                  <img className="credit-img" src="https://i.imgur.com/gAgBJTU.jpg" />
               </div>
-          
             </div>
           </div>
         </div>
