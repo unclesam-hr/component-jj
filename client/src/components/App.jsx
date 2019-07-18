@@ -160,7 +160,7 @@ export default class App extends Component {
   showInstagram() {
     return (
       <div>
-        <button><TiSocialInstagram size={20}/> CONNECT TO INSTAGRAM</button>
+        <button className="btn-center"><div><TiSocialInstagram size={20}/></div> <div>CONNECT TO INSTAGRAM</div></button>
       </div>
     )
   }
@@ -168,7 +168,7 @@ export default class App extends Component {
   showFacebook() {
     return (
       <div>
-        <button><TiSocialFacebookCircular size={20}/> CONNECT TO FACEBOOK</button>
+        <button className="btn-center"><div><TiSocialFacebookCircular size={20}/></div> <div>CONNECT TO FACEBOOK</div></button>
       </div>
     )
   }
