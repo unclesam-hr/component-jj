@@ -9,12 +9,7 @@
 }
 
 ul {
-  list-style: none;
   padding-left: 0;
-}
-
-li {
-  text-align: -webkit-match-parent;
 }
 
 a {
@@ -51,6 +46,7 @@ a {
 .breadcrumb {
   margin: 0 auto;
   width: 960px;
+  padding: 20px 0;
 }
  
 .breadcrumb-list li {
