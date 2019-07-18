@@ -10,6 +10,7 @@
 
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 li {
@@ -37,7 +38,8 @@ a {
 
 #main {
   display: flex;
-  width: 75%;
+  /* width: 75%; */
+  width: 960px;
   margin: 0 auto;
 }
 
@@ -46,31 +48,32 @@ a {
 }
 
 /* BREADCRUMB */
-.breadcrumb-list {
-   padding-left: 12.5%;
- }
+.breadcrumb {
+  margin: 0 auto;
+  width: 960px;
+}
  
- .breadcrumb-list li {
+.breadcrumb-list li {
    font-size: 11px;
    display: inline;
    text-transform: capitalize;
    padding: 20px 0;
- }
+}
  
  /* Add a slash symbol (/) before/behind each list item */
- .breadcrumb-list li+li:before {
-   content: ">\00a0";
-   color: #363636;
-   margin: 0 5px;
- }
+.breadcrumb-list li+li:before {
+  content: ">\00a0";
+  color: #363636;
+  margin: 0 5px;
+}
  
- ul li a:hover {
-   color: #01447e;
- }
- 
- .breadcrumb-list .breadcrumb-list-current-item {
-   font-weight: normal;
- }
+ul li a:hover {
+  color: #01447e;
+}
+
+.breadcrumb-list .breadcrumb-list-current-item {
+  font-weight: normal;
+}
 
 /*IMAGE ZOOM COMPONENT */
  .product-image {
