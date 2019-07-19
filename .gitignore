@@ -1,5 +1,4 @@
 node_modules
-
 spec
-
 jest.config.js
+.DS_Store
