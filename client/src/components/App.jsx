@@ -22,29 +22,19 @@ export default class App extends Component {
       showShippingOptions: false,
       upload: true,
       instagram: false,
-      facebook: false
+      facebook: false,
+      selectedShipOption: 'Ship This Item'
     }
-
-    this.fetchProduct = this.fetchProduct.bind(this);
-    this.updateMainImg = this.updateMainImg.bind(this);
-    this.handleSelectedColor = this.handleSelectedColor.bind(this);
-    this.handleAddToCart = this.handleAddToCart.bind(this);
-    this.shippingOptions = this.shippingOptions.bind(this);
-    this.showCartModal = this.showCartModal.bind(this);
-    this.closeCartModal = this.closeCartModal.bind(this);
-    this.handleFileUpload = this.handleFileUpload.bind(this);
-    this.closeFileModal = this.closeFileModal.bind(this);
-    this.handleFileUploadClick = this.handleFileUploadClick.bind(this);
   }
 
   componentDidMount() {
     this.fetchProduct()
   }
 
-  fetchProduct() {
+  fetchProduct = () => {
     const id = Math.floor(Math.random() * (19) + 1);
     axios
-      .get(`http://localhost:3003/api/product/${id}`)
+      .get(`/api/product/${id}`)
       .then(({data}) => {
         this.setState({ 
           product : data[0],
@@ -57,11 +47,11 @@ export default class App extends Component {
     .catch(err => console.error(err));
   }
 
-  updateMainImg(selectedImage) {
+  updateMainImg = (selectedImage) => {
     this.setState({ mainImage: selectedImage })
   }
 
-  handleSelectedColor(e) {
+  handleSelectedColor = (e) => {
     let imgs = document.getElementsByClassName('carousel-image-selected');
     let colors = document.getElementsByClassName('colorImg-selected');
     let selectedColor = e.target;
@@ -73,10 +63,10 @@ export default class App extends Component {
     });
     this.updateMainImg(this.state.colors[e.target.id].image);
     // remove borders from carousel and add border to selected color
-    if (imgs.length) {
-      imgs[0].className = "carousel-image"
-    }
-
+    // if (imgs.length) {
+    //   imgs[0].className = "carousel-image"
+    // }
+    imgs.length ? imgs[0].className = "carousel-image" : null;
     if (colors.length) {
       colors[0].className = "colorImg";
       selectedColor.className = "colorImg-selected";
@@ -85,29 +75,30 @@ export default class App extends Component {
     }
   }
 
+  handleShippingChange = (e) => {
+    this.setState({ selectedShipOption: e.target.id })
+  }
+
   shippingOptions() {
     return (
       <div id="receive-method">
         <h3>Shipping Options</h3>
         <div className="receive-method-option">
-          <input className="radio" type="radio" name="drone" checked />
+          <input className="radio" name="drone" id="ship" type="radio" onChange={this.handleShippingChange} checked />
           <label>Ship This Item</label>
           <div className="receive-extra"><strong className="in-stock">In Stock + Ready to Ship:</strong> Order now for delivery Jul. 19 - Jul. 23 to zip code: 90001</div>
-          
-          </div>
-
+        </div>
         <div className="receive-method-option">
-          <input className="radio" type="radio" name="drone" />
+          <input className="radio" name="drone" id="pick-up" type="radio" onChange={this.handleShippingChange} />
           <label>Free Pick Up In Store </label>
           <div className="not-available receive-extra">Not Available Near Florence-Graham, CA, USA</div>
           <div><a className="store-link receive-extra" href="">Choose a different store</a></div>
-         
         </div>
       </div>
     )
   }
 
-  handleAddToCart(e) {
+  handleAddToCart = (e) => {
     if(!this.state.selectedColor) {
       this.setState({ makeSelection: true })
     } else {
@@ -116,28 +107,28 @@ export default class App extends Component {
     }    
   }
 
-  showCartModal() {
+  showCartModal = () => {
     let modal = document.getElementById("cart-modal");
     modal.style.display = "block";
   }
 
-  closeCartModal() {
+  closeCartModal = () => {
     let modal = document.getElementById("cart-modal");
     modal.style.display = "none";
   }
 
-  handleFileUpload(e) {
+  handleFileUpload = (e) => {
     e.preventDefault();
     let modal = document.getElementById("file-modal");
     modal.style.display = "block";
   }
 
-  closeFileModal() {
+  closeFileModal = () => {
     let modal = document.getElementById("file-modal");
     modal.style.display = "none";
   }
 
-  handleFileUploadClick(e) {
+  handleFileUploadClick = (e) => {
     const options = e.target.id;
     if(options === 'instagram') {
       this.setState({ upload: false, instagram: true, facebook: false });
@@ -148,7 +139,7 @@ export default class App extends Component {
     }
   }
 
-  showUpload () {
+  showUpload() {
     return (
       <div>
         <h2>DRAG & DROP</h2>
@@ -185,16 +176,13 @@ export default class App extends Component {
         <div id="main">
           <div id="cart-modal" className="modal">
             <div className="cart-modal-content">
-          
                 <span className="close" onClick={this.closeCartModal}>&times;</span>
                 <h3>ADDED TO SHOPPING CART</h3>
-
                 <div className="cart-info">
                   <div id="cart-product-info">
                     <div>
                       <img className="cart-product-image" src={this.state.mainImage} />
                     </div>
-
                     <div className="cart-product-details">
                       <h4>{this.state.product.productName + ', ' + this.state.selectedColor}</h4>
                       <div id="sku">Item: 706774</div>
@@ -214,14 +202,12 @@ export default class App extends Component {
                     <div className="review" style={reviewStyle}>You’ll still have a chance to review your order.</div>
                   </div>
                 </div>
-      
               <div className="cart-bottom">
                 <h2>WE THOUGHT YOU'D ALSO LOVE...</h2>
                 <img src="https://imgur.com/0LT6gvi.jpg"/>
               </div>
             </div>
           </div>
-
 
           <div id="file-modal" className="modal">
             <div className="modal-content">
@@ -262,10 +248,16 @@ export default class App extends Component {
             </div>
 
             <div className="save-product">
-              <FiMail size={20} />&#160;
-              <span className="save-product-text space">Email</span>
-              <FiPrinter size={20}/>&#160;
-              <span className="save-product-text">Print</span>
+              <div className="save-product-option">
+                <FiMail size={20} />&#160;
+                <span className="save-product-text space">Email</span>
+              </div>
+ 
+           
+              <div className="save-product-option">
+                <FiPrinter size={20}/>&#160;
+                <span className="save-product-text">Print</span>
+              </div>
             </div>
 
             <div className="gallery">
