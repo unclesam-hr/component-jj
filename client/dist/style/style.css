@@ -307,14 +307,17 @@ h4, h2 {
 /*EMAIL AND PRINT*/
 .save-product {
   display: flex;
-  width: 98%;
   border-bottom: 1px solid #d9d9d9;
   margin-bottom: 30px;
   padding-bottom: 20px;
+}
+
+.save-product-option {
+  display: flex;
   align-items: center;
 }
 
-.save-product:hover {
+.save-product-option:hover {
   cursor: pointer;
   color: #866347;
 }
