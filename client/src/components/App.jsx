@@ -52,9 +52,9 @@ export default class App extends Component {
   }
 
   handleSelectedColor = (e) => {
-    let imgs = document.getElementsByClassName('carousel-image-selected');
-    let colors = document.getElementsByClassName('colorImg-selected');
-    let selectedColor = e.target;
+    const imgs = document.getElementsByClassName('carousel-image-selected');
+    const colors = document.getElementsByClassName('colorImg-selected');
+    const selectedColor = e.target;
 
     this.setState({
       selectedColor: this.state.colors[e.target.id].name, 
@@ -62,10 +62,6 @@ export default class App extends Component {
       makeSelection: false
     });
     this.updateMainImg(this.state.colors[e.target.id].image);
-    // remove borders from carousel and add border to selected color
-    // if (imgs.length) {
-    //   imgs[0].className = "carousel-image"
-    // }
     imgs.length ? imgs[0].className = "carousel-image" : null;
     if (colors.length) {
       colors[0].className = "colorImg";
@@ -108,23 +104,23 @@ export default class App extends Component {
   }
 
   showCartModal = () => {
-    let modal = document.getElementById("cart-modal");
+    const modal = document.getElementById("cart-modal");
     modal.style.display = "block";
   }
 
   closeCartModal = () => {
-    let modal = document.getElementById("cart-modal");
+    const modal = document.getElementById("cart-modal");
     modal.style.display = "none";
   }
 
   handleFileUpload = (e) => {
     e.preventDefault();
-    let modal = document.getElementById("file-modal");
+    const modal = document.getElementById("file-modal");
     modal.style.display = "block";
   }
 
   closeFileModal = () => {
-    let modal = document.getElementById("file-modal");
+    const modal = document.getElementById("file-modal");
     modal.style.display = "none";
   }
 
@@ -204,7 +200,24 @@ export default class App extends Component {
                 </div>
               <div className="cart-bottom">
                 <h2>WE THOUGHT YOU'D ALSO LOVE...</h2>
-                <img src="https://imgur.com/0LT6gvi.jpg"/>
+                <div className="related-container">
+                  <div>
+                    <img src="https://carousel-we.s3-us-west-1.amazonaws.com/misc/cart-gallery1.jpg" />
+                    <br /><a className="related-name">Auburn Ottoman</a>
+                    <strong>$99 - $129</strong>
+                  </div>
+                  <div>
+                    <img src="https://carousel-we.s3-us-west-1.amazonaws.com/00/00.jpg" />
+                    <br /><a className="related-name">Storm Painting</a>
+                    <strong>$379</strong>
+                  </div>
+                  <div>
+                    <img src="https://carousel-we.s3-us-west-1.amazonaws.com/00/00.jpg" />
+                    <br /><a className="related-name">Tripod Table</a>
+                    <strong>$125</strong>
+                  </div>
+                </div>
+      
               </div>
             </div>
           </div>
@@ -261,7 +274,7 @@ export default class App extends Component {
             </div>
 
             <div className="gallery">
-              <img className="at-logo" src="https://imgur.com/KXvJ9Co.jpg" />
+              <img className="at-logo" src="https://carousel-we.s3-us-west-1.amazonaws.com/misc/at-westelm-logo.jpg" />
               <a className="add-photos" onClick={this.handleFileUpload} href="">+ ADD YOUR OWN PHOTOS</a>
               <Gallery gallery={this.state.gallery}/>
             </div>
@@ -280,8 +293,6 @@ export default class App extends Component {
           <div className="right">
             <div className="productDetails">
               <h1 className="product-name">{this.state.product.productName}</h1>
-              {/*<p className="color-select">HAVE A QUESTION?</p>
-              <p className="grade right-subsets">Contract Grade</p> */}
               <div className="color">
                 {this.state.makeSelection ? <div className="color-select-popup">Please make selections before adding to cart.</div> : null}
                 <p className="color-select">PLEASE SELECT A COLOR:</p>
@@ -309,7 +320,7 @@ export default class App extends Component {
               <div className="right-subsets">
                 <div><button className="cart-btn" onClick={this.handleAddToCart}>Add To Cart</button></div>
                 <div><button id="registry" className="cart-btn">Add To Registry</button></div>
-                  <img className="credit-img" src="https://i.imgur.com/gAgBJTU.jpg" />
+                  <img className="credit-img" src="https://carousel-we.s3-us-west-1.amazonaws.com/misc/credit-rewards.jpg" />
               </div>
             </div>
           </div>

@@ -180,10 +180,25 @@ ul li a:hover {
   border-top: 1px solid rgb(217, 217, 217);
   padding: 15px 0;
   text-align: center;
+  /* height: 200px; */
+  height: auto;
+  font-size: 12px;
+}
+
+.related-container {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+.related-name {
+  display: block;
+  margin: 0 auto 10px;
 }
 
 .cart-bottom img {
-  width: 400px;
+  width: 120px;
+  margin: 10px 20px 0 0;
 }
 
 .cart-product-image {
@@ -556,10 +571,6 @@ h3 {
 }
 
 /* FILE MODAL */
-.test {
-  height: 500px;
-}
-
 #file-modal-content {
   display: flex;
 }
