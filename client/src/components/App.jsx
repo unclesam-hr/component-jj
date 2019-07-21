@@ -199,7 +199,7 @@ export default class App extends Component {
                   </div>
                 </div>
               <div className="cart-bottom">
-                <h2>WE THOUGHT YOU'D ALSO LOVE...</h2>
+                <h3>WE THOUGHT YOU'D ALSO LOVE...</h3>
                 <div className="related-container">
                   <div>
                     <img src="https://carousel-we.s3-us-west-1.amazonaws.com/misc/cart-gallery1.jpg" />
