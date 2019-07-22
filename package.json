@@ -12,7 +12,7 @@
     "start": "nodemon server/index.js",
     "seed": "node data/seed.js",
     "build": "webpack -d --watch",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "devDependencies": {
@@ -24,6 +24,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.0.0",
     "compression-webpack-plugin": "^3.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -45,6 +46,16 @@
     "react-id-swiper": "^2.3.1",
     "react-image-magnify": "^2.7.4",
     "swiper": "^4.5.0"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
   },
   "homepage": "https://github.com/unclesam-hr/component-jj#readme"
 }
