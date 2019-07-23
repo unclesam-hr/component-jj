@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Swiper from 'react-id-swiper';
 
-export default Gallery = ({ gallery }) => {
+const Gallery = ({ gallery }) => {
   const params = {
     noSwiping: true,
     slidesPerView: 3,
@@ -15,7 +15,7 @@ export default Gallery = ({ gallery }) => {
     }
   } 
 
-  return this.props.gallery.length  > 0  ? (
+  return gallery.length  > 0  ? (
     <Swiper {...params}>
       {gallery.map((image, key) => (
         <div key={key}>
@@ -25,3 +25,4 @@ export default Gallery = ({ gallery }) => {
     </Swiper>
   ) : null; 
 }
+export default Gallery

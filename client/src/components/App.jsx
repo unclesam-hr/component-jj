@@ -23,7 +23,8 @@ export default class App extends Component {
       upload: true,
       instagram: false,
       facebook: false,
-      selectedShipOption: 'Ship This Item'
+      selectedShipOption: 'Ship This Item',
+      showFileModal: false
     }
   }
 
@@ -115,13 +116,7 @@ export default class App extends Component {
 
   handleFileUpload = (e) => {
     e.preventDefault();
-    const modal = document.getElementById("file-modal");
-    modal.style.display = "block";
-  }
-
-  closeFileModal = () => {
-    const modal = document.getElementById("file-modal");
-    modal.style.display = "none";
+    this.setState({ showFileModal: !this.state.showFileModal });
   }
 
   handleFileUploadClick = (e) => {
@@ -222,9 +217,9 @@ export default class App extends Component {
             </div>
           </div>
 
-          <div id="file-modal" className="modal">
+          <div id="file-modal" className={this.state.showFileModal ? "show-modal" : "modal"}>
             <div className="modal-content">
-                <span className="close" onClick={this.closeFileModal}>&times;</span>
+                <span className="close" onClick={this.handleFileUpload}>&times;</span>
                 <div id="file-modal-content">
                   <div className="file-tabs">
                     <h3>Select Your Content</h3>
@@ -254,7 +249,7 @@ export default class App extends Component {
           </div>
 
           <div className="left">
-          <ImageZoom productName={this.state.product.productName} smallImage={this.state.mainImage} largeImage={this.state.mainImage} className="zoom"/>
+            <ImageZoom productName={this.state.product.productName} smallImage={this.state.mainImage} largeImage={this.state.mainImage} className="zoom"/>
             
             <div className="carousel">
               <Carousel updateMainImg={this.updateMainImg} images={this.state.images}/>
@@ -265,7 +260,6 @@ export default class App extends Component {
                 <FiMail size={20} />&#160;
                 <span className="save-product-text space">Email</span>
               </div>
- 
            
               <div className="save-product-option">
                 <FiPrinter size={20}/>&#160;
