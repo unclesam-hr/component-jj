@@ -7,36 +7,16 @@ export default class ImageZoom extends Component {
     super(props);
     this.state = {
       favorite: false,
+      showModal: false,
     }
-    this.showModal = this.showModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.toggleFavorite = this.toggleFavorite.bind(this);
   }
 
-  toggleFavorite(e) {
+  toggleFavorite = (e) => {
     this.setState({ favorite: !this.state.favorite });
   }
 
-  favorite() {
-    return (
-      <span onClick={this.toggleFavorite} className="favorite"><FaHeart size={25} style={{color: 'red'}}/></span>
-    )
-  }
-
-  unfavorite() {
-    return (
-      <span onClick={this.toggleFavorite} className="favorite"><FaRegHeart size={25} style={{color: 'red'}}/></span>
-    )
-  }
-
-  showModal(e) {
-    let modal = document.getElementById("image-modal");
-    modal.style.display = "block";
-  }
-
-  closeModal(e) {
-    let modal = document.getElementById("image-modal");
-    modal.style.display = "none";
+  handleModal = (e) => {
+    this.setState({ showModal: !this.state.showModal})
   }
 
   render() {
@@ -44,21 +24,22 @@ export default class ImageZoom extends Component {
     const largeImage = this.props.largeImage || ''
     return (
       <div className="fluid">
-
-        <div id="image-modal" className="modal">
-          <div className="modal-content" onClick={this.closeModal}>
-            <span className="close" onClick={this.closeModal}>&times;</span>
+        <div id="image-modal" className={this.state.showModal ? "show-modal" : "modal"}>
+          <div className="modal-content" onClick={this.handleModal}>
+            <span className="close" onClick={this.handleModal}>&times;</span>
             <p>{this.props.productName}</p>
             <img src={largeImage} />
           </div>
         </div>
         <div className="product-image">
-        {this.state.favorite ? this.favorite() : this.unfavorite()}
-          <div onClick={this.showModal} className="fluid-image-container">
+        {this.state.favorite 
+          ? (<span onClick={this.toggleFavorite} className="favorite"><FaHeart size={25} style={{color: 'red'}}/></span>)
+          : (<span onClick={this.toggleFavorite} className="favorite"><FaRegHeart size={25} style={{color: 'red'}}/></span>)}
+          <div onClick={this.handleModal} className="fluid-image-container">
             <ReactImageMagnify {...{
                 enlargedImageContainerClassName: "enlargedImage",
                 smallImage: {
-                  alt: 'Wristwatch by Ted Baker London',
+                  alt: "Wristwatch by Ted Baker London",
                   isFluidWidth: true,
                   src: smallImage,
                 },
@@ -73,8 +54,8 @@ export default class ImageZoom extends Component {
                 },
                 shouldUsePositiveSpaceLens: true,
                 lensStyle: {
-                  background: 'hsla(0, 0%, 100%, .3)',
-                  border: '1px solid #ccc',
+                  background: "hsla(0, 0%, 100%, .3)",
+                  border: "1px solid #ccc",
                 }
               }} />
           </div>
