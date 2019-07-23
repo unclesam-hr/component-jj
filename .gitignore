@@ -3,3 +3,5 @@ spec
 jest.config.js
 .DS_Store
 coverage
+/client/dist/bundle.js
+/client/dist/bundle.js.gz
