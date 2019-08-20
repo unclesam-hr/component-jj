@@ -268,7 +268,8 @@ export default class App extends Component {
             </div>
 
             <div className="gallery">
-              <img className="at-logo" src="https://carousel-we.s3-us-west-1.amazonaws.com/misc/at-westelm-logo.jpg" />
+              <img className="at-logo" src="https://carousel-we.s3-us-west-1.amazonaws.com/misc/eastelm.png" />
+              {/* <img className="at-logo" src="https://carousel-we.s3-us-west-1.amazonaws.com/misc/at-westelm-logo.jpg" /> */}
               <a className="add-photos" onClick={this.handleFileUpload} href="">+ ADD YOUR OWN PHOTOS</a>
               <Gallery gallery={this.state.gallery}/>
             </div>

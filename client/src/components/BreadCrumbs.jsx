@@ -4,17 +4,17 @@ const BreadCrumbs = (props) => (
   <div className="breadcrumb">
     <ul className="breadcrumb-list" className="breadcrumb-list">
       <li>
-        <a href="https://www.westelm.com/">
+        <a href="">
           <span id="home">Home</span>
         </a>
       </li>
       <li>
-        <a href="https://www.westelm.com/shop/furniture/">
+        <a href="">
           <span id="Furniture">Furniture</span>
         </a>
       </li>
       <li>
-        <a href="https://www.westelm.com/shop/furniture/living-room-chairs/">
+        <a href="">
           <span id="LivingRoomChairs">{props.product.type}</span>
         </a>
       </li>
